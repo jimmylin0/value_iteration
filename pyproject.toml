@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "value_iteration"
-version = "1.0.0"
+version = "1.0.1"
 maintainers = [
   { name="Jimmy Yuliang Lin", email="j.lin36@lancaster.ac.uk" },
 ]
