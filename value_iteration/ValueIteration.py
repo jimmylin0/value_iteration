@@ -188,10 +188,5 @@ def get_3x3GridWorld():
     gamma = 0.9
     return S, A, P, R, gamma
 
-k = 100
-S, A, P, R, gamma = get_3x3GridWorld()
-dp, action = value_iteration(S, A, P, R, gamma, k)
-print(dp)
-print(action)
 
 
