@@ -22,8 +22,30 @@ This package takes as input the defined tuples $(S, A, P, R, \gamma)$ from the a
 After defining the MDP tuples, one needs to specify the number of iterations to run the algorithm for by setting the variable $k$. Then we can implement everything into the function.
 
 ## Example
-We will define the tuples $(S, A, P, R, \gamma)$ based on the problem from example 9.27 from example 9.27 from https://artint.info/2e/html2e/ArtInt2e.Ch9.S5.html#Ch9.Thmciexamplered27. In short, this example describes an agent as either sick or healthy, and give the choice to party or rest. The reward gained is different depending on the choices, and we can apply the value iteration algorithm to this to see which are the optimal actions to take in each state.
+We will define the tuples $(S, A, P, R, \gamma)$ based on the problem from example 9.27 from example 9.27 from https://artint.info/2e/html2e/ArtInt2e.Ch9.S5.html#Ch9.Thmciexamplered27. 
 
+This example describes an agent as either sick or healthy, and give the choice to party or rest. The reward gained is different depending on the choices, and we can apply the value iteration algorithm to this to see which are the optimal actions to take in each state.
+
+$S = {\text{healthy}, \text{sick}}$
+$A = {\text{relax}, \text{party}}$
+
+Transition probability $P(s'|s, a)$:
+| S        | A       | Probability of  s' = healthy  |
+| -------- | ------- | ----------------------------- |
+| healthy  | relax   | 0.95                          |
+| healthy  | party   | 0.7                           |
+| sick     | relax   | 0.5                           |
+| sick     | party   | 0.1                           |
+
+Reward $R$:
+| S        | A       | Probability of  s' = healthy  |
+| -------- | ------- | ----------------------------- |
+| healthy  | relax   | 7                             |
+| healthy  | party   | 10                            |
+| sick     | relax   | 0                             |
+| sick     | party   | 2                             |
+
+Here is how one may structure the tuples $(S, A, P, R, \gamma)$:
 ```
 import value_iteration.ValueIteration as vi
 import numpy
